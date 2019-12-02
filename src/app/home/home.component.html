@@ -1,0 +1,16 @@
+<section fxLayout="column" fxFlexAlign="stretch">
+    <div fxFlexAlign="center">
+      <p>Welcome to the Printing Manager Dashboard</p>
+    </div>
+  
+    <p>In this application we are going to work with:</p>
+  
+    <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+      <mat-tab label="Printer Associations"> 
+        <p>Manage printers associations</p> 
+      </mat-tab>
+      <mat-tab label="Printer formats">
+         <p>Analyze statistics</p>
+        </mat-tab>
+        </mat-tab-group>
+  </section>

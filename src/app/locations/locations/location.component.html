@@ -1,0 +1,55 @@
+<div fxFlex fxLayout>
+        <mat-form-field>
+          <mat-select #locationTypeFilter placeholder="Location type" name="locationTypeFilter" (selectionChange)="locationTypeFilterChangeAction(locationTypeFilter.triggerValue)">
+            <mat-option [value]="true">Store</mat-option>
+            <mat-option [value]="false">Pharmacy</mat-option>
+          </mat-select>
+        </mat-form-field>
+  <button mat-icon-button (click)="reload()" fxLayoutAlign="flex-end">
+      <mat-icon>refresh</mat-icon>
+    </button>
+</div>
+
+<div class="spinner-container" *ngIf="datasource.loading$ | async">
+  <mat-spinner></mat-spinner>
+</div>
+
+<mat-table #table [dataSource]="datasource" matSort class="mat-cell" matSort matSortDirection="asc">
+  <tr>
+
+    <!-- Location Number -->
+    <ng-container matColumnDef="locationNumber">
+      <mat-header-cell *matHeaderCellDef mat-sort-header style="width: 10px;"> Number </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.locationNumber}}</mat-cell>
+    </ng-container>
+    <!-- Location Type -->
+    <ng-container matColumnDef="locationType">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
+      <mat-cell *matCellDef="let element">{{element.locationType}}</mat-cell>
+    </ng-container>
+
+    <!-- actions -->
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button color="primary" (click)="addFeature()">
+          <mat-icon aria-label="Add location">add</mat-icon>
+        </button>
+      </mat-header-cell>
+
+      <mat-cell *matCellDef="let row; let i=index;">
+        <button mat-icon-button color="accent" (click)="editFeature(i, row.id, row.platform, row.domain, row.key, row.name, row.description, row.configurable, row.value)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="accent" (click)="delete(row.locationNumber)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+  </tr>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<!-- TODO -->
+<mat-paginator [length]="datasource.count" [pageSize]="10" [pageSizeOptions]="[3, 5, 10]"></mat-paginator>

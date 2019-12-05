@@ -9,7 +9,7 @@ export const environment = {
   locationsApiURL: 'http://localhost:3000/locations',
   logLevel: NgxLoggerLevel.INFO,
   serverLogLevel: NgxLoggerLevel.OFF,
-  defaultLanguage: 'en-gb', // 'en-gb', 'de-ch'
+  defaultLanguage: 'it-it', // 'en-gb', 'de-ch'
   isDebugMode: false,
 };
 

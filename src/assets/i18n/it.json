@@ -1,0 +1,21 @@
+{
+  "APP_NAME": "Printing Manager Dashboard",
+  "APP_TOOLBAR_TITLE": "Printing Manager Dashboard",
+  "HOME": "Home",
+
+  "LOGIN_BUTTON": "Accedi",
+  "LOGIN_LABEL": "Accedi",
+  "DONT_HAVE_AN_ACCOUNT_LABEL": "Non sei registrato?",
+  "SIGN_UP_BUTTON": "Regitrati",
+
+  "REGISTER_BUTTON": "Registrati",
+  "REGISTER_LABEL": "Crea un account",
+
+  "CONTACTS_HEADER": "Contatti",
+  "DASHBOARDS_HEADER": "Dashboard",
+
+  "CONTACT_HEADER": "Contatti",
+  "ACCOUNT_HEADER": "Account",
+  "LOCATIONS": "Sedi"
+
+}

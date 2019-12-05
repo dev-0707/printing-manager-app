@@ -16,6 +16,8 @@ import { NGXLogger } from 'ngx-logger';
 import { environment } from '../../environments/environment';
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
+import { throwIfAlreadyLoaded } from './module-import-guard';
+
 
 // TODO
 // import { throwIfAlreadyLoaded } from './module-import-guard';
@@ -56,11 +58,11 @@ export class CoreModule {
     this.logger.info('Default Language: ' + defaultLanguage);
     this.logger.info('Local: ' + environment.defaultLanguage.split('-')[1]);
 
-    translate.setDefaultLang(defaultLanguage);
-    translate.use(defaultLanguage);
+    this.translate.setDefaultLang(defaultLanguage);
+    this.translate.use(defaultLanguage);
 
     // TODO
-    // throwIfAlreadyLoaded(parentModule, 'CoreModule');
+    throwIfAlreadyLoaded(parentModule, 'CoreModule');
   }
 
 }

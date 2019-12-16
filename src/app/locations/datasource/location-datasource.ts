@@ -2,12 +2,12 @@ import { SearchField } from '../../core/model/search-field';
 import { DataSource } from '@angular/cdk/table';
 import { tap, catchError, finalize } from 'rxjs/operators';
 import { NGXLogger } from 'ngx-logger';
-import { LocationService } from '../locations/service/location.service';
+import { LocationService } from '../service/location.service';
 import { CommonDatasource } from '../../core/common-datasource';
 import { of } from 'rxjs';
 
 
-export class LocationDatasource extends CommonDatasource implements DataSource<Location> {
+export class LocationDatasource extends CommonDatasource<Location> implements DataSource<Location> {
 
   constructor(private locationService: LocationService) {
     super();

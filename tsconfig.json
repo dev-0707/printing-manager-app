@@ -9,7 +9,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,	
+    "allowSyntheticDefaultImports": true,
     "target": "es5",
     "typeRoots": [
       "node_modules/@types"
@@ -24,6 +24,24 @@
       ],
       "@env/*": [
         "src/environments/*"
+      ],
+      "printers": [
+        "dist/printers"
+      ],
+      "printers/*": [
+        "dist/printers/*"
+      ],
+      "common-components": [
+        "dist/common-components"
+      ],
+      "common-components/*": [
+        "dist/common-components/*"
+      ],
+      "utils": [
+        "dist/utils"
+      ],
+      "utils/*": [
+        "dist/utils/*"
       ]
     },
     "module": "esnext",

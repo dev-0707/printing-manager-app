@@ -13,8 +13,8 @@ import { HeaderComponent } from '../../core/components/navigation/header/header.
 import { LayoutComponent } from '../../core/components/layout/layout.component';
 import { LocationComponent } from './location.component';
 
-describe('LocationComponent', () => {
-  let component: LocationComponent;
+describe('LocationListComponent', () => {
+  let component: LocationListComponent;
   let fixture: ComponentFixture<LocationComponent>;
 
   beforeEach(async(() => {

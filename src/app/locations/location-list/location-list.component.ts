@@ -1,5 +1,5 @@
 import { LocationDatasource } from '../datasource/location-datasource';
-import { LocationService } from './service/location.service';
+import { LocationService } from '../service/location.service';
 import { Component, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
 import { NGXLogger } from 'ngx-logger';
 import { CrudComponent } from '../../core/crud-component';
@@ -9,12 +9,12 @@ import { SearchField } from '../../core/model/search-field';
 
 @Component({
   selector: 'app-location',
-  templateUrl: './location.component.html',
-  styleUrls: ['./location.component.css']
+  templateUrl: './location-list.component.html',
+  styleUrls: ['./location-list.component.css']
 })
-export class LocationComponent extends CrudComponent implements OnInit, AfterViewInit {
+export class LocationListComponent extends CrudComponent implements OnInit, AfterViewInit {
 
-  location: Location;
+  selectedLocation: Location;
 
   // Material table columns
   displayedColumns: string[] = ['locationNumber', 'locationType', 'actions'];
@@ -25,7 +25,6 @@ export class LocationComponent extends CrudComponent implements OnInit, AfterVie
   }
 
   ngOnInit() {
-    this.location = this.route.snapshot.data['app-root'];
     this.datasource = new LocationDatasource(this.locationService);
     this.datasource.findAll(this.searchFields, this.sort.active,
       this.sort.direction,
@@ -49,5 +48,9 @@ export class LocationComponent extends CrudComponent implements OnInit, AfterVie
 
   delete(id: String) {
     return this.datasource.delete(id).subscribe(() => this.loadData());
+  }
+
+  onSelect(location: Location){
+    this.selectedLocation = location;
   }
 }

@@ -1,11 +1,11 @@
-import { LocationService } from './locations/service/location.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LocationComponent } from './locations/location.component';
+import { LocationListComponent } from './location-list/location-list.component';
 import { MaterialModule } from '../material/material.module';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
-  declarations: [LocationComponent],
+  declarations: [LocationListComponent, LocationComponent],
   imports: [
     CommonModule,
     MaterialModule

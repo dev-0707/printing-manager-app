@@ -1,0 +1,59 @@
+// @import "../../themes/mat-variables";
+// @import "../../themes/variables";
+@import "../../../../../../projects/utils/src/lib/angular-material/mat-variables";
+@import "../../../../../../projects/utils/src/lib/angular-material/variables";
+
+.lib-activity-bar-row {
+  height: $lib-activity-bar-height-desktop !important;
+  min-height: $lib-activity-bar-height-desktop !important;
+
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @media ($mat-xsmall) {
+    height: $lib-activity-bar-height-mobile !important;
+    min-height: $lib-activity-bar-height-mobile !important;
+  }
+}
+
+//
+// https://material.angular.io/guide/customizing-component-styles
+//
+
+/*
+
+.lib-activity-bar-menu-button {
+  min-width: 32px !important;
+  padding: 0 !important;
+}
+
+*/
+
+::ng-deep .lib-activity-bar-menu-button {
+  min-width: 32px !important;
+  padding: 0 !important;
+}
+
+::ng-deep .mat-menu-content {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+::ng-deep .mat-menu-item {
+  line-height: 40px !important;
+  height: 40px !important;
+}
+
+/*
+
+.lib-activity-bar-menu {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.lib-activity-bar-menu-item {
+  line-height: 40px !important;
+  height: 40px !important;
+}
+
+*/

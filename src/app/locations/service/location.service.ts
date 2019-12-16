@@ -1,10 +1,10 @@
-import { environment } from './../../../../environments/environment';
+import { environment } from '../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { NGXLogger } from 'ngx-logger';
-import { HTTPService } from '../../../http-service';
-import { SearchField } from '../../../core/model/search-field';
+import { HTTPService } from '../../http-service';
+import { SearchField } from '../../core/model/search-field';
 import { tap } from 'rxjs/operators';
 
 @Injectable({
@@ -13,6 +13,10 @@ import { tap } from 'rxjs/operators';
 export class LocationService extends HTTPService {
 
   delete(id: String): Observable<Object> {
+    return this.httpClient.delete(`${environment.locationsApiURL}/${id}`, {observe: 'response'});
+  }
+
+  findById(id: String): Observable<Object> {
     return this.httpClient.delete(`${environment.locationsApiURL}/${id}`, {observe: 'response'});
   }
 
@@ -28,4 +32,13 @@ export class LocationService extends HTTPService {
     // this.logger.debug(`${httpParams}`);
     return this.httpClient.get<Location[]>(`${environment.locationsApiURL}`, {params: httpParams});
   }
+
+  public findOne(id: string): Observable<Location> {
+
+    return this.httpClient.get<Location>(`${environment.locationsApiURL}/${id}`).pipe(
+      tap(() => {
+        this.logger.info('ContactsService: findOne() completed');
+      }));
+  }
+
 }

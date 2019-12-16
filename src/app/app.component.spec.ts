@@ -8,7 +8,7 @@ import { TranslateModule, TranslateLoader, TranslateService } from '@ngx-transla
 import { HttpLoaderFactory } from './core/core.module';
 import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
 import { HomeComponent } from './home/home.component';
-import { LocationComponent } from './locations/locations/location.component';
+import { LocationListComponent } from './locations/location-list/location-list.component';
 import { HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { APP_BASE_HREF } from '@angular/common'
@@ -25,7 +25,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent,
         HomeComponent,
-        LocationComponent,
+        LocationListComponent,
         SidenavListComponent,
         HeaderComponent,
         LayoutComponent

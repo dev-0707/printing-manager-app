@@ -10,6 +10,36 @@
     </button>
 </div>
 
+<lib-command-bar>
+
+  <button mat-button class="lib-command-bar-button" (click)="onNew()">
+    <mat-icon>add</mat-icon>
+    {{ 'NEW' }}
+  </button>
+
+  <button mat-button class="crm-command-bar-button" [disabled]="true">
+    <mat-icon>visibility</mat-icon>
+    ACTIVATE
+  </button>
+
+  <button mat-button class="crm-command-bar-button" [disabled]="true">
+    <mat-icon>visibility_off</mat-icon>
+    DEACTIVATE
+  </button>
+
+  <button mat-button class="crm-command-bar-button" [disabled]="true">
+    <mat-icon>link</mat-icon>
+    EMAIL A LINK
+  </button>
+>
+
+  <button mat-button class="lib-command-bar-button" [disabled]="true">
+    <mat-icon>description</mat-icon>
+    {{ 'RUN_REPORT' }}
+  </button>
+
+</lib-command-bar>
+
 <div class="spinner-container" *ngIf="datasource.loading$ | async">
   <mat-spinner></mat-spinner>
 </div>
@@ -20,12 +50,14 @@
     <!-- Location Number -->
     <ng-container matColumnDef="locationNumber">
       <mat-header-cell *matHeaderCellDef mat-sort-header style="width: 10px;"> Number </mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.locationNumber}}</mat-cell>
+      <mat-cell *matCellDef="let element"  (click)="onSelect(element)" >{{element.locationNumber}}</mat-cell>
     </ng-container>
     <!-- Location Type -->
     <ng-container matColumnDef="locationType">
       <mat-header-cell *matHeaderCellDef mat-sort-header> Type </mat-header-cell>
-      <mat-cell *matCellDef="let element">{{element.locationType}}</mat-cell>
+      <mat-cell *matCellDef="let element"><a [routerLink]="[element.locationNumber]">
+        {{element.locationType}}
+      </a></mat-cell>
     </ng-container>
 
     <!-- actions -->
@@ -50,6 +82,10 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+
+
+<!-- <app-location-detail [location]="selectedLocation"></app-location-detail> -->
+
 
 <!-- TODO -->
 <mat-paginator [length]="datasource.count" [pageSize]="10" [pageSizeOptions]="[3, 5, 10]"></mat-paginator>

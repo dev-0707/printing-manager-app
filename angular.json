@@ -175,41 +175,6 @@
         }
       }
     },
-    "common-components": {
-      "root": "projects/common-components",
-      "sourceRoot": "projects/common-components/src",
-      "projectType": "library",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
-          "options": {
-            "tsConfig": "projects/common-components/tsconfig.lib.json",
-            "project": "projects/common-components/ng-package.json"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "projects/common-components/src/test.ts",
-            "tsConfig": "projects/common-components/tsconfig.spec.json",
-            "karmaConfig": "projects/common-components/karma.conf.js"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/common-components/tsconfig.lib.json",
-              "projects/common-components/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "utils": {
       "root": "projects/utils",
       "sourceRoot": "projects/utils/src",
@@ -237,6 +202,146 @@
             "tsConfig": [
               "projects/utils/tsconfig.lib.json",
               "projects/utils/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "dynamic-forms": {
+      "root": "projects/dynamic-forms",
+      "sourceRoot": "projects/dynamic-forms/src",
+      "projectType": "library",
+      "prefix": "dynamic-forms",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/dynamic-forms/tsconfig.lib.json",
+            "project": "projects/dynamic-forms/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/dynamic-forms/src/test.ts",
+            "tsConfig": "projects/dynamic-forms/tsconfig.spec.json",
+            "karmaConfig": "projects/dynamic-forms/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/dynamic-forms/tsconfig.lib.json",
+              "projects/dynamic-forms/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "auth": {
+      "root": "projects/auth",
+      "sourceRoot": "projects/auth/src",
+      "projectType": "library",
+      "prefix": "auth",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/auth/tsconfig.lib.json",
+            "project": "projects/auth/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/auth/src/test.ts",
+            "tsConfig": "projects/auth/tsconfig.spec.json",
+            "karmaConfig": "projects/auth/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/auth/tsconfig.lib.json",
+              "projects/auth/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "auth-local": {
+      "root": "projects/auth-local",
+      "sourceRoot": "projects/auth-local/src",
+      "projectType": "library",
+      "prefix": "auth-local",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/auth-local/tsconfig.lib.json",
+            "project": "projects/auth-local/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/auth-local/src/test.ts",
+            "tsConfig": "projects/auth-local/tsconfig.spec.json",
+            "karmaConfig": "projects/auth-local/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/auth-local/tsconfig.lib.json",
+              "projects/auth-local/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "common-components": {
+      "projectType": "library",
+      "root": "projects/common-components",
+      "sourceRoot": "projects/common-components/src",
+      "prefix": "common",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/common-components/tsconfig.lib.json",
+            "project": "projects/common-components/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/common-components/src/test.ts",
+            "tsConfig": "projects/common-components/tsconfig.spec.json",
+            "karmaConfig": "projects/common-components/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/common-components/tsconfig.lib.json",
+              "projects/common-components/tsconfig.spec.json"
             ],
             "exclude": [
               "**/node_modules/**"

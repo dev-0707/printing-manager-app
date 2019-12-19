@@ -32,9 +32,11 @@
         "dist/printers/*"
       ],
       "common-components": [
+        "dist/common-components",
         "dist/common-components"
       ],
       "common-components/*": [
+        "dist/common-components/*",
         "dist/common-components/*"
       ],
       "utils": [
@@ -42,6 +44,24 @@
       ],
       "utils/*": [
         "dist/utils/*"
+      ],
+      "dynamic-forms": [
+        "dist/dynamic-forms"
+      ],
+      "dynamic-forms/*": [
+        "dist/dynamic-forms/*"
+      ],
+      "auth": [
+        "dist/auth"
+      ],
+      "auth/*": [
+        "dist/auth/*"
+      ],
+      "auth-local": [
+        "dist/auth-local"
+      ],
+      "auth-local/*": [
+        "dist/auth-local/*"
       ]
     },
     "module": "esnext",

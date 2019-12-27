@@ -4,15 +4,15 @@
 @import "../../../../../../projects/utils/src/lib/angular-material/variables";
 
 .lib-activity-bar-row {
-  height: $lib-activity-bar-height-desktop !important;
-  min-height: $lib-activity-bar-height-desktop !important;
+  height: $common-activity-bar-height-desktop !important;
+  min-height: $common-activity-bar-height-desktop !important;
 
   padding-left: 24px;
   padding-right: 24px;
 
   @media ($mat-xsmall) {
-    height: $lib-activity-bar-height-mobile !important;
-    min-height: $lib-activity-bar-height-mobile !important;
+    height: $common-activity-bar-height-mobile !important;
+    min-height: $common-activity-bar-height-mobile !important;
   }
 }
 

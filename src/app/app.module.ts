@@ -15,6 +15,8 @@ import { LayoutComponent } from './core/components/layout/layout.component';
 import { GlobalErrorHandler } from './error-handler';
 import { HttpErrorInterceptor } from './core/http-interceptors/error-interceptor';
 import { CoreModule } from './core/core.module';
+import { LoggerService, loggerProviders } from 'utils';
+
 
 @NgModule({
   declarations: [
@@ -45,7 +47,7 @@ import { CoreModule } from './core/core.module';
   providers: [{
     provide: ErrorHandler,
     useClass: GlobalErrorHandler
-  },
+  }, loggerProviders,
   {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpErrorInterceptor,
@@ -53,4 +55,11 @@ import { CoreModule } from './core/core.module';
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private logger: LoggerService) {
+
+    this.logger.info('App Module initialised');
+  }
+
+}

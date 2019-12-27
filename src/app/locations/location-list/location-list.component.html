@@ -10,35 +10,35 @@
     </button>
 </div>
 
-<common-command-bar>
+<lib-command-bar>
 
-  <button mat-button class="common-command-bar-button" (click)="onNew()">
+  <button mat-button class="lib-command-bar-button" (click)="onNew()">
     <mat-icon>add</mat-icon>
     {{ 'NEW' }}
   </button>
 
-  <button mat-button class="common-command-bar-button" [disabled]="true">
+  <button mat-button class="lib-command-bar-button" [disabled]="true">
     <mat-icon>visibility</mat-icon>
     ACTIVATE
   </button>
 
-  <button mat-button class="common-command-bar-button" [disabled]="true">
+  <button mat-button class="lib-command-bar-button" [disabled]="true">
     <mat-icon>visibility_off</mat-icon>
     DEACTIVATE
   </button>
 
-  <button mat-button class="common-command-bar-button" [disabled]="true">
+  <button mat-button class="lib-command-bar-button" [disabled]="true">
     <mat-icon>link</mat-icon>
     EMAIL A LINK
   </button>
 >
 
-  <button mat-button class="common-command-bar-button" [disabled]="true">
+  <button mat-button class="lib-command-bar-button" [disabled]="true">
     <mat-icon>description</mat-icon>
     {{ 'RUN_REPORT' }}
   </button>
 
-</common-command-bar>
+</lib-command-bar>
 
 <div class="spinner-container" *ngIf="datasource.loading$ | async">
   <mat-spinner></mat-spinner>

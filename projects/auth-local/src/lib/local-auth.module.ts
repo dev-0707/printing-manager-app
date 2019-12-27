@@ -50,7 +50,7 @@ import { LibRoutingModule } from './lib-routing.module';
 export class LocalAuthModule {
 
   constructor(private logger: LoggerService) {
-    this.logger.info('Local Auth Module initialised');
+    this.logger.debug('Local Auth Module initialised');
   }
 
 }

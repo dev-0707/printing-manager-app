@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   public ngOnInit() {
 
-    this.logger.info('LoginComponent: ngOnInit()');
+    this.logger.debug('LoginComponent: ngOnInit()');
 
     if (this.authService.isAuthenticated()) {
 
@@ -55,7 +55,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.logger.info('LoginComponent: ngOnDestroy()');
+    this.logger.debug('LoginComponent: ngOnDestroy()');
   }
 
   //

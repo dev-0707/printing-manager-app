@@ -20,11 +20,6 @@ export class LocationComponent implements OnInit {
     private router: Router, private locationService: LocationService) { }
 
   public ngOnInit() {
-
-    this.logger.info('ContactComponent: ngOnInit()');
-
-    // this.partyId = this.route.snapshot.paramMap.get('id');
-
     let paramSubscription: Subscription = new Subscription();
     this.subscriptions.push(paramSubscription);
 
@@ -40,7 +35,7 @@ export class LocationComponent implements OnInit {
 
   async subscribe() {
 
-    this.logger.info('ContactComponent: subscribe()');
+    this.logger.debug('ContactComponent: subscribe()');
     let modelSubscription: Subscription = new Subscription();
     this.subscriptions.push(modelSubscription);
 

@@ -40,7 +40,7 @@ export class LocalAuthService extends Auth {
 
     super();
 
-    this.logger.info('LocalAuthService constructor()');
+    this.logger.debug('LocalAuthService constructor()');
 
     this.userSubject = new BehaviorSubject<User>(null);
     this.user = this.userSubject.asObservable();
@@ -60,7 +60,7 @@ export class LocalAuthService extends Auth {
 
   public async setAccessToken() {
 
-    this.logger.info('LocalAuthService: setAccessToken()');
+    this.logger.debug('LocalAuthService: setAccessToken()');
   }
 
   public createUserWithEmailAndPassword(user: User): Promise<any> {
@@ -73,9 +73,9 @@ export class LocalAuthService extends Auth {
         this.accessToken = tokens.access_token;
         this.idToken = tokens.id_token;
 
-        this.logger.info('LocalAuthService: createUserWithEmailAndPassword() completed');
+        this.logger.debug('LocalAuthService: createUserWithEmailAndPassword() completed');
 
-        // this.logger.info('token:' + JSON.stringify(token, null, 2));
+        // this.logger.debug('token:' + JSON.stringify(token, null, 2));
 
         this.userSubject.next(user);
 
@@ -108,9 +108,9 @@ export class LocalAuthService extends Auth {
         this.accessToken = tokens.access_token;
         this.idToken = tokens.id_token;
 
-        this.logger.info('LocalAuthService: loginWithEmailAndPassword() completed');
+        this.logger.debug('LocalAuthService: loginWithEmailAndPassword() completed');
 
-        this.logger.info('tokens:' + JSON.stringify(tokens, null, 2));
+        this.logger.debug('tokens:' + JSON.stringify(tokens, null, 2));
 
         this.userSubject.next(user);
 
@@ -176,7 +176,7 @@ export class LocalAuthService extends Auth {
 
     this.httpOptions.params = params;
 
-    // this.logger.info(JSON.stringify(this.httpOptions));
+    // this.logger.debug(JSON.stringify(this.httpOptions));
 
     return this.httpOptions;
   }

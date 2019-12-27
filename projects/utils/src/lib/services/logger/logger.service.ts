@@ -13,6 +13,7 @@ export class LoggerService implements Logger {
   public info: any;
   public warn: any;
   public error: any;
+  public debug: any;
 
 }
 

@@ -52,7 +52,7 @@ export class CommonComponentsModule {
 
   constructor(private logger: NGXLogger) {
 
-    this.logger.info('Common Components Module initialised');
+    this.logger.debug('Common Components Module initialised');
   }
 
 }

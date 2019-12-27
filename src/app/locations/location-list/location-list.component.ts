@@ -26,10 +26,10 @@ export class LocationListComponent extends CrudComponent implements OnInit, Afte
 
   ngOnInit() {
     this.datasource = new LocationDatasource(this.locationService);
-    this.datasource.findAll(this.searchFields, this.sort.active,
-      this.sort.direction,
-      this.paginator.pageIndex,
-      this.paginator.pageSize);
+    this.datasource.findAll(this.searchFields, 'locationtype',
+      'asc',
+      1,
+      25);
   }
 
   loadData() {

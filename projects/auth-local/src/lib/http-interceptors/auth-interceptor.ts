@@ -11,7 +11,7 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private authService: AuthService,
               private logger: LoggerService) {
 
-    this.logger.info('AuthInterceptor: constructor()');
+    this.logger.debug('AuthInterceptor: constructor()');
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
@@ -20,7 +20,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     if (accessToken) {
 
-      // this.logger.info('AuthInterceptor: intercept() Bearer ' + accessToken);
+      // this.logger.debug('AuthInterceptor: intercept() Bearer ' + accessToken);
 
       const authReq = req.clone({ setHeaders: { Authorization: 'Bearer ' + accessToken } });
       return next.handle(authReq);

@@ -49,7 +49,7 @@ export class DynamicControlDirective  implements OnInit, OnDestroy  {
 
   public ngOnInit() {
 
-    // this.logger.info('DynamicControlDirective: ngOnInit()');
+    // this.logger.debug('DynamicControlDirective: ngOnInit()');
 
     this.createDynamicFormControlComponent();
   }
@@ -61,13 +61,13 @@ export class DynamicControlDirective  implements OnInit, OnDestroy  {
 
   private createDynamicFormControlComponent() {
 
-    // this.logger.info('DynamicControlDirective: createDynamicFormControlComponent()');
+    // this.logger.debug('DynamicControlDirective: createDynamicFormControlComponent()');
 
     if (!components[this.model.type]) {
 
       const supportedTypes = Object.keys(components).join(', ');
 
-      this.logger.info(`You tried to use an unsupported type (${this.model.type}). Supported types: ${supportedTypes}`);
+      this.logger.debug(`You tried to use an unsupported type (${this.model.type}). Supported types: ${supportedTypes}`);
 
     } else {
 
@@ -81,7 +81,7 @@ export class DynamicControlDirective  implements OnInit, OnDestroy  {
 
       if (instance.customEvent !== undefined) {
 
-        // this.logger.info('DynamicControlDirective: instance.customEvent.subscribe()');
+        // this.logger.debug('DynamicControlDirective: instance.customEvent.subscribe()');
 
         this.componentSubscriptions.push(
           instance.customEvent.subscribe((event: DynamicFormControlCustomEvent) => this.onCustomEvent(event)));
@@ -97,7 +97,7 @@ export class DynamicControlDirective  implements OnInit, OnDestroy  {
 
       this.componentSubscriptions.forEach(subscription => {
 
-        // this.logger.info('DynamicControlDirective: instance.customEvent.unsubscribe()');
+        // this.logger.debug('DynamicControlDirective: instance.customEvent.unsubscribe()');
 
         subscription.unsubscribe();
       });
@@ -111,7 +111,7 @@ export class DynamicControlDirective  implements OnInit, OnDestroy  {
 
   onCustomEvent(event: DynamicFormControlCustomEvent): void {
 
-    this.logger.info('DynamicControlDirective: onCustomEvent()');
+    this.logger.debug('DynamicControlDirective: onCustomEvent()');
 
     // const emitter = this.customEvent as EventEmitter<any>;
     // emitter.emit($event);
@@ -131,7 +131,7 @@ export class DynamicControlDirective  implements OnInit, OnDestroy  {
   @HostListener('dynamicEvent', ['$event.target'])
   public onEvent($event: any) {
 
-    this.logger.info('DynamicControlDirective: onEvent()');
+    this.logger.debug('DynamicControlDirective: onEvent()');
   }
 
 */

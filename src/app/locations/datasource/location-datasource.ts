@@ -13,13 +13,9 @@ export class LocationDatasource extends CommonDatasource<Location> implements Da
     super();
   }
 
-  findAll(searchField: SearchField[], sort: string, sortOrder: string,
-    pageNumber, pageSize) {
+  findAll(searchField: SearchField[], sort = 'locationType', sortOrder = 'asc',
+    pageNumber = 1, pageSize = 10) {
     this.datasourceLoading.next(true);
-
-      if (!pageSize) {
-        pageSize = 10;
-      }
 
       this.locationService.findAll(searchField, sort, sortOrder, pageNumber, pageSize).pipe(
         catchError(() => of([])),

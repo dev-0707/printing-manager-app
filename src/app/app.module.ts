@@ -59,7 +59,7 @@ export class AppModule {
 
   constructor(private logger: LoggerService) {
 
-    this.logger.info('App Module initialised');
+    this.logger.debug('App Module initialised');
   }
 
 }

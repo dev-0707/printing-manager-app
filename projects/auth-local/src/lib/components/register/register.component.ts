@@ -33,7 +33,7 @@ export class RegisterComponent  implements OnInit, OnDestroy {
 
   public ngOnInit() {
 
-    this.logger.info('RegisterComponent: ngOnInit()');
+    this.logger.debug('RegisterComponent: ngOnInit()');
 
     if (this.authService.isAuthenticated()) {
 
@@ -54,7 +54,7 @@ export class RegisterComponent  implements OnInit, OnDestroy {
   }
 
   public ngOnDestroy() {
-    this.logger.info('RegisterComponent: ngOnDestroy()');
+    this.logger.debug('RegisterComponent: ngOnDestroy()');
   }
 
   //

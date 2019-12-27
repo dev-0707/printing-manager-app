@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LocationListComponent } from './location-list/location-list.component';
 import { MaterialModule } from '../material/material.module';
 import { LocationComponent } from './location/location.component';
-import { LoggerService, StaticInjectorService } from 'utils';
+import { LoggerService } from 'utils';
 
 @NgModule({
   declarations: [LocationListComponent, LocationComponent],
@@ -14,11 +14,11 @@ import { LoggerService, StaticInjectorService } from 'utils';
     MaterialModule
   ]
 })
-export class LocationModule {   constructor(private injector: Injector,
-  private logger: LoggerService) {
+export class LocationModule {
+    constructor(private injector: Injector,
+      private logger: LoggerService) {
 
-// this.logger.info('Sales Module initialised');
+      this.logger.debug('Location Module initialised');
 
-StaticInjectorService.setInjector(injector);
-}
+    }
 }

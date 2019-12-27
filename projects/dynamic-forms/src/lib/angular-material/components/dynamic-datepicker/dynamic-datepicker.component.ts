@@ -45,7 +45,7 @@ export class DynamicDatepickerComponent implements OnInit {
 
   public ngOnInit() {
 
-    // this.logger.info('DynamicDatepickerComponent: ngOnInit()');
+    // this.logger.debug('DynamicDatepickerComponent: ngOnInit()');
     this.elementClass = this.model.gridItemClass;
   }
 

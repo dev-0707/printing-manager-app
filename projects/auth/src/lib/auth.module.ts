@@ -15,7 +15,7 @@ import { LoggerService } from 'utils';
 export class AuthModule {
 
   constructor(private logger: LoggerService) {
-    this.logger.info('Auth Module initialised');
+    this.logger.debug('Auth Module initialised');
   }
 
 }

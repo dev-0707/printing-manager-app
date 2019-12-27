@@ -24,12 +24,9 @@ export class LocationService extends HTTPService {
     super();
   }
 
-  findAll(searchField: SearchField[], sort: string, sortOrder: string,
-    pageNumber, pageSize): Observable<Location[]> {
+  findAll(searchField: SearchField[], sort = 'locationType', sortOrder = 'asc',
+    pageNumber = 1, pageSize = 10): Observable<Location[]> {
     const httpParams = this.buildHttpParams(searchField, sort, sortOrder, pageNumber, pageSize);
-    // tslint:disable-next-line:max-line-length
-    // this.logger.debug(`Invoking ${`${environment.locationsApiURL}`} with the following params`);
-    // this.logger.debug(`${httpParams}`);
     return this.httpClient.get<Location[]>(`${environment.locationsApiURL}`, {params: httpParams});
   }
 
@@ -37,7 +34,7 @@ export class LocationService extends HTTPService {
 
     return this.httpClient.get<Location>(`${environment.locationsApiURL}/${id}`).pipe(
       tap(() => {
-        this.logger.info('ContactsService: findOne() completed');
+        this.logger.debug('ContactsService: findOne() completed');
       }));
   }
 

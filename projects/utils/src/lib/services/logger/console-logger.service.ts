@@ -44,6 +44,14 @@ export class ConsoleLoggerService implements Logger {
     }
   }
 
+  get debug() {
+    if (this.config.isDebugMode) {
+      return console.info.bind(console);
+    } else {
+      return noop;
+    }
+  }
+
 }
 
 // https://stackoverflow.com/questions/13815640/a-proper-wrapper-for-console-log-with-correct-line-number

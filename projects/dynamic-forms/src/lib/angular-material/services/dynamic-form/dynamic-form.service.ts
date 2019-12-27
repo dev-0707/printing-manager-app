@@ -38,7 +38,7 @@ export class DynamicFormService {
 
     // this.uriPrefix = this.uriPrefix + this.config.defaultLanguage.split('-')[0] + '/';
 
-    this.logger.info('DynamicFormService: uriPrefrix: ' + this.uriPrefix);
+    this.logger.debug('DynamicFormService: uriPrefrix: ' + this.uriPrefix);
   }
 
   // public getFormMetadata(formId: string): Observable<DynamicFormControlModel[]> {
@@ -55,7 +55,7 @@ export class DynamicFormService {
 
     const group = this.formBuilder.group({});
 
-    this.logger.info('DynamicFormService: createGroup()');
+    this.logger.debug('DynamicFormService: createGroup()');
 
     formModel.forEach(controlModel => {
 
@@ -113,7 +113,7 @@ export class DynamicFormService {
 
   public initGroup(formGroup: FormGroup, item): void {
 
-    this.logger.info('DynamicFormService: initGroup()');
+    this.logger.debug('DynamicFormService: initGroup()');
 
     for (const field of Object.keys(formGroup.controls)) {
 
@@ -129,11 +129,11 @@ export class DynamicFormService {
 
   public value(formGroup: FormGroup, item): void {
 
-    this.logger.info('DynamicFormService: value()');
+    this.logger.debug('DynamicFormService: value()');
 
     for (const field of Object.keys(formGroup.controls)) {
 
-      this.logger.info('field: ' + field);
+      this.logger.debug('field: ' + field);
 
       // embeddedObject, for example party.displayName
       const embeddedObject = field.split('.');
@@ -150,11 +150,11 @@ export class DynamicFormService {
           // const iterator = embeddedObject.values();
 
           // for (const element of iterator) {
-          //   this.logger.info('element: ' + element);
+          //   this.logger.debug('element: ' + element);
           // }
 
-          // this.logger.info(embeddedObject[0] + ': ' + JSON.stringify(item[embeddedObject[0]]));
-          // this.logger.info(embeddedObject[1] + ': ' + item[embeddedObject[0]][embeddedObject[1]]);
+          // this.logger.debug(embeddedObject[0] + ': ' + JSON.stringify(item[embeddedObject[0]]));
+          // this.logger.debug(embeddedObject[1] + ': ' + item[embeddedObject[0]][embeddedObject[1]]);
 
           item[embeddedObject[0]][embeddedObject[1]] = formGroup.controls[field].value;
           break;

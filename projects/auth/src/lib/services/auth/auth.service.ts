@@ -15,7 +15,7 @@ export class AuthService extends Auth {
 
     super();
 
-    this.logger.info('AuthService: constructor()');
+    this.logger.debug('AuthService: constructor()');
   }
 
   public isAuthenticated(): boolean {

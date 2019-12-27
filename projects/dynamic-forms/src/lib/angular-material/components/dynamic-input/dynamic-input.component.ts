@@ -54,13 +54,13 @@ export class DynamicInputComponent implements OnInit {
 
   public ngOnInit() {
 
-    // this.logger.info('DynamicInputComponent: ngOnInit()');
+    // this.logger.debug('DynamicInputComponent: ngOnInit()');
     this.elementClass = this.model.gridItemClass;
   }
 
   public iconSuffixClickHandler() {
 
-    this.logger.info('DynamicInputComponent: emit customEvent');
+    this.logger.debug('DynamicInputComponent: emit customEvent');
     this.customEvent.emit({ type: 'click', id: this.model.id, directive: 'matSuffix', name: this.model.suffixIconName });
   }
 
@@ -105,7 +105,7 @@ ERROR: projects/dynamic-forms/src/lib/angular-material/components/dynamic-input/
 
   @HostListener(`document:cat`, ['$event'])
   public onEvent(event: any) {
-    this.logger.info('DynamicInputComponent: iconSuffixClickHandler()');
+    this.logger.debug('DynamicInputComponent: iconSuffixClickHandler()');
   }
 
       <mat-icon matSuffix> search </mat-icon>

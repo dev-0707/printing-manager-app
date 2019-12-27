@@ -54,13 +54,13 @@ export class CoreModule {
               private translate: TranslateService,
               private logger: NGXLogger) {
 
-    this.logger.info('Core Module initialised');
+    this.logger.debug('Core Module initialised');
 
     // 'en-gb' -> 'en'
     const defaultLanguage = environment.defaultLanguage.split('-')[0];
 
-    this.logger.info('Default Language: ' + defaultLanguage);
-    this.logger.info('Local: ' + environment.defaultLanguage.split('-')[1]);
+    this.logger.debug('Default Language: ' + defaultLanguage);
+    this.logger.debug('Local: ' + environment.defaultLanguage.split('-')[1]);
 
     this.translate.setDefaultLang(defaultLanguage);
     this.translate.use(defaultLanguage);

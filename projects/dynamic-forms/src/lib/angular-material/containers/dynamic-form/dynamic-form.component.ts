@@ -42,12 +42,12 @@ export class DynamicFormComponent implements OnInit {
   }
 
   public ngOnInit() {
-    this.logger.info('DynamicFormComponent: ngOnInit()');
+    this.logger.debug('DynamicFormComponent: ngOnInit()');
   }
 
   public onCustomEvent(event: DynamicFormControlCustomEvent) {
 
-    this.logger.info('DynamicFormComponent: onCustomEvent()');
+    this.logger.debug('DynamicFormComponent: onCustomEvent()');
     this.customEvent.emit(event);
   }
 

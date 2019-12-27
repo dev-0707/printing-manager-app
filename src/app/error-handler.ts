@@ -5,11 +5,11 @@ import { ErrorHandler, Injectable } from '@angular/core';
 export class GlobalErrorHandler implements ErrorHandler {
 
   constructor(private logger: NGXLogger) {
-    this.logger.info('GlobalErrorHandler initialised');
+    this.logger.debug('GlobalErrorHandler initialised');
   }
 
   handleError(error) {
-    this.logger.info('GlobalErrorHandler: handleError()');
+    this.logger.error(`GlobalErrorHandler: ${error}`);
     window.alert(error);
   }
 }

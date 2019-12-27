@@ -46,7 +46,7 @@ export class DynamicFormsModule {
 
   constructor(private logger: LoggerService) {
 
-    this.logger.info('Dynamic Forms Module initialised');
+    this.logger.debug('Dynamic Forms Module initialised');
   }
 
   static forRoot(config: DynamicFormsConfig): ModuleWithProviders<DynamicFormsModule> {

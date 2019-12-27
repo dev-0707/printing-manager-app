@@ -23,7 +23,7 @@ export class NGXLoggerService implements Logger {
 
   get info() {
     if (this.config.isDebugMode) {
-      return this.logger.info;
+      return this.logger.info.bind(this.logger);
     } else {
       return noop;
     }
@@ -31,7 +31,7 @@ export class NGXLoggerService implements Logger {
 
   get warn() {
     if (this.config.isDebugMode) {
-      return this.logger.warn;
+      return this.logger.warn.bind(this.logger);
     } else {
       return noop;
     }

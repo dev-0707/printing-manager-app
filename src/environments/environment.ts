@@ -6,13 +6,14 @@ import { NgxLoggerLevel } from 'ngx-logger';
 
 export const environment = {
   production: false,
+  isDebugMode: true,
+  version: '1.0.0-beta.1',
   apiServer: 'http://localhost:3000',
   locationsApiURL: `http://localhost:3000/locations`,
   printersApiURL: `http://localhost:3000/printers`,
   logLevel: NgxLoggerLevel.INFO,
   serverLogLevel: NgxLoggerLevel.OFF,
   defaultLanguage: 'it-it', // 'en-gb', 'de-ch'
-  isDebugMode: false,
 };
 
 /*

@@ -17,7 +17,7 @@ import { LoggerService, StaticInjectorService } from 'utils';
 export class LocationModule {   constructor(private injector: Injector,
   private logger: LoggerService) {
 
-this.logger.info('Sales Module initialised');
+// this.logger.info('Sales Module initialised');
 
 StaticInjectorService.setInjector(injector);
 }

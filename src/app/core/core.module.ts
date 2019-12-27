@@ -14,10 +14,12 @@ import { MaterialModule } from '../material/material.module';
 import { NGXLogger } from 'ngx-logger';
 
 // TODO
-import { environment } from '../../environments/environment';
+import { environment } from '@env/environment';
+
 import { HeaderComponent } from './components/navigation/header/header.component';
 import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { throwIfAlreadyLoaded } from './module-import-guard';
+import { UtilsModule } from 'utils';
 
 
 // TODO
@@ -40,7 +42,7 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
         deps: [ HttpClient ]
       }
     }),
-
+    UtilsModule.forRoot(environment),
     RouterModule  // There is no directive with "exportAs" set to "routerLinkActive ...
   ],
   declarations: [ HeaderComponent, SidenavListComponent ],

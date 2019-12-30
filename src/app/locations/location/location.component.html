@@ -1,11 +1,19 @@
-<div *ngIf="location">
-
-  <h2>{{location.locationNumber}}</h2>
-  <div><span>id: </span>{{location.locationNumber}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="location.locationType" placeholder="locationType"/>
-    </label>
+<div class="crm-component-title-container">
+    <h1 class="crm-component-title">{{ 'LOCATIONS_HEADER' | translate }}</h1>
   </div>
-
-</div>
+  
+  <div class="crm-content-container">
+  
+    <!-- <ng-container *ngIf="!item; then skeleton"> </ng-container> -->
+  
+    <ng-container *ngIf="generalInformationGroup">
+  
+      <div class="crm-table-container">
+            <dynamic-form autocomplete="off"
+                          className="crm-nested-grid-container"
+                          [formGroup]="generalInformationGroup"
+                          [model]="generalInformationModel">
+            </dynamic-form>
+      </div> <!-- crm-table-container -->
+  
+    </ng-container>

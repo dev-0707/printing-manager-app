@@ -1,0 +1,42 @@
+[
+
+    {
+      "type": "input",
+      "id": "locationType",
+      "label": "Location Type",
+      "appearance": "fill",
+  
+      "validators": [
+        {
+          "name": "Location Type",
+          "args": null,
+          "propertyName": "Location Type",
+          "message": "Please enter a valid Location Type address"
+        }
+      ],
+  
+      "gridItemClass": "grid-column-1",
+      "required": true
+    },
+    {
+      "type": "input",
+      "inputType": "locationNumber",
+      "id": "locationNumber",
+      "label": "Location Number",
+      "placeholder": "test",
+      "appearance": "fill",
+  
+      "validators": [
+        {
+          "name": "required",
+          "args": null,
+          "propertyName": "required",
+          "message": "You must enter a locationNumber"
+        }
+      ],
+  
+      "gridItemClass": "grid-column-1",
+      "required": true
+    }
+  
+  ]

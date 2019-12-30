@@ -1,5 +1,6 @@
+import { MatStepperModule } from '@angular/material/stepper';
 // tslint:disable-next-line:max-line-length
-import { MatTableModule, MatInputModule, MatButtonModule, MatPaginatorModule, MatCheckboxModule, MatProgressSpinnerModule, MatSortModule, MatSlideToggle, MatSlideToggleModule, MatToolbarModule, MatIconModule, MatDialogModule, MatOptionModule, MatSelectModule, MatRadioModule, MatMenuTrigger, MatMenu, MatMenuModule, MatSidenavModule, MatListModule, MatGridListModule, MatCardModule, MatTabsModule } from '@angular/material';
+import { MatTableModule, MatInputModule, MatButtonModule, MatPaginatorModule, MatCheckboxModule, MatProgressSpinnerModule, MatSortModule, MatSlideToggle, MatSlideToggleModule, MatToolbarModule, MatIconModule, MatDialogModule, MatOptionModule, MatSelectModule, MatRadioModule, MatMenuTrigger, MatMenu, MatMenuModule, MatSidenavModule, MatListModule, MatGridListModule, MatCardModule, MatTabsModule, MatVerticalStepper } from '@angular/material';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from '../routing/app-routing.module';
@@ -31,7 +32,8 @@ import { AppRoutingModule } from '../routing/app-routing.module';
     MatCardModule,
     MatButtonModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule
 
   ], exports: [
     MatDialogModule,
@@ -58,7 +60,8 @@ import { AppRoutingModule } from '../routing/app-routing.module';
     MatCardModule,
     MatButtonModule,
     MatTabsModule,
-    MatMenuModule
+    MatMenuModule,
+    MatStepperModule
   ]
 })
 export class MaterialModule { }

@@ -17,9 +17,9 @@ import { NGXLogger } from 'ngx-logger';
 import { environment } from '@env/environment';
 
 import { HeaderComponent } from './components/navigation/header/header.component';
-import { SidenavListComponent } from './components/navigation/sidenav-list/sidenav-list.component';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { UtilsModule } from 'utils';
+import { NavComponent } from './components/nav/nav.component';
 
 
 // TODO
@@ -45,8 +45,8 @@ import { UtilsModule } from 'utils';
     UtilsModule.forRoot(environment),
     RouterModule  // There is no directive with "exportAs" set to "routerLinkActive ...
   ],
-  declarations: [ HeaderComponent, SidenavListComponent ],
-  exports: [ HeaderComponent, SidenavListComponent ]
+  declarations: [ HeaderComponent, NavComponent ],
+  exports: [ HeaderComponent, NavComponent ]
 })
 export class CoreModule {
 

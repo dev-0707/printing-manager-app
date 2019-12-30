@@ -8,6 +8,8 @@
   "DONT_HAVE_AN_ACCOUNT_LABEL": "Non sei registrato?",
   "SIGN_UP_BUTTON": "Regitrati",
 
+  "MAIN": "Main",
+
   "REGISTER_BUTTON": "Registrati",
   "REGISTER_LABEL": "Crea un account",
 
@@ -16,6 +18,6 @@
 
   "CONTACT_HEADER": "Contatti",
   "ACCOUNT_HEADER": "Account",
-  "LOCATIONS": "Sedi"
+  "LOCATIONS_HEADER": "Sedi"
 
 }

@@ -1,3 +1,4 @@
+import { LoggerService } from './../../../../../../projects/utils/src/lib/services/logger/logger.service';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -10,10 +11,11 @@ export class HeaderComponent implements OnInit {
 
   @Output() public sidenavToggle = new EventEmitter();
 
-  constructor(private translate: TranslateService) { }
+  constructor(private translate: TranslateService, private logger: LoggerService) { }
 
   ngOnInit() {
     this.translate.get('APP_TOOLBAR_TITLE').subscribe(value => {
+      // TODO: Header logger
       console.log(value);
     });
   }
